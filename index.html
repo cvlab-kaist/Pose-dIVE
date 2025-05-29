@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta property="og:image:width" content="1200">
+    <meta property="og:image:width" content="1500">
     <meta property="og:image:height" content="630">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://cvlab-kaist.github.io/Pose-dIVE/">
@@ -35,18 +35,14 @@
                 <!-- Pose-Diversified Augmentation with Diffusion Model <br> for Person Re-Identification <br> -->
                 Pose-dIVE : Pose-Diversified Augmentation for Person Re-Identification <br>
                 <small>
-                    Arxiv 2024
+                    Arxiv 2025
                 </small>
             </h2>
         </div>
         <div class="row" id="author-row" style="margin:0 auto;">
             <div class="col-md-12 text-center" style="display: table; margin:0 auto">
                 <a style="text-decoration:none" href="https://ines-hyeonsu-kim.github.io/">
-                    Ine&#768;s Hyeonsu&nbsp;Kim<sup>1,</sup>*
-                </a>
-                <span style="padding-left: 20px;"></span>
-                <a style="text-decoration:none" href="https://github.com/joungbinlee">
-                    JoungBin&nbsp;Lee<sup>2,</sup>*
+                    Ine&#768;s Hyeonsu&nbsp;Kim<sup>1,</sup>
                 </a>
                 <span style="padding-left: 20px;"></span>
                 <a style="text-decoration:none" href="https://github.com/wooj0216">
@@ -54,29 +50,25 @@
                 </a>
                 <span style="padding-left: 20px;"></span>
                 <a style="text-decoration:none" href="https://github.com/soow0n">
-                    Soowon&nbsp;Son<sup>2</sup>
+                    Soowon&nbsp;Son<sup>1</sup>
+                <span style="padding-left: 20px;"></span>
+                <a style="text-decoration:none" href="https://github.com/joungbinlee">
+                    JoungBin&nbsp;Lee<sup>1,</sup>
                 </a><br>
-                <a style="text-decoration:none" href="">
-                    Kyusun&nbsp;Cho<sup>2</sup>
-                </a>
                 <span style="padding-left: 20px;"></span>
                 <a style="text-decoration:none" href="https://j0seo.github.io/">
                     Junyoung&nbsp;Seo<sup>1</sup>
                 </a>
                 <span style="padding-left: 20px;"></span>
-                <a style="text-decoration:none" href="">
-                    Min-Seop&nbsp;Kwak<sup>1</sup>
-                </a>
-                <span style="padding-left: 20px;"></span>
-                <a style="text-decoration:none" href="https://seokju-cho.github.io/">
+                <a style="text-decoration: 20px" href="https://seokju-cho.github.io/">
                     Seokju&nbsp;Cho<sup>1</sup>
-                </a><br>
-                <a style="text-decoration:none" href="">
-                    JeonYeol&nbsp;Baek<sup>3</sup>
+                </a>
+                <a style="text-decoration: 20px" href="">
+                    JeonYeol&nbsp;Baek<sup>2</sup>
                 </a>
                 <span style="padding-left: 20px;"></span>
                 <a style="text-decoration:none" href="">
-                    Byeongwon&nbsp;Lee<sup>3</sup>
+                    Byeongwon&nbsp;Lee<sup>2</sup>
                 </a>
                 <span style="padding-left: 20px;"></span>
                 <a style="text-decoration:none" href="https://cvlab.kaist.ac.kr/members/faculty">
@@ -88,15 +80,12 @@
                             <sup>1</sup>KAIST
                         </td>
                         <td>
-                            <sup>2</sup>Korea University
-                        </td>
-                        <td>
-                            <sup>3</sup>SKT
+                            <sup>2</sup>SKT
                         </td>
                     </tr>
                 </table>
-                <span class="author-block"><small><sup>*</sup>Equal Contribution</small></span>
-                <br>
+                <!-- <span class="author-block"><small><sup>*</sup>Equal Contribution</small></span>
+                <br> -->
                 <span class="author-block"><small><sup>†</sup>Corresponding Author</small></span>
             </div>
         </div>
@@ -143,14 +132,12 @@
                             Abstract
                         </h3>
                         <p class="text-justify" style="width: 100%;">
-                            Person re-identification (Re-ID) often faces challenges due to variations in human pose and camera viewpoint, which significantly affects the appearance variations of individuals across images.
-                            Existing datasets often lack diversity and scalability of these human pose and camera viewpoint, hindering the generalization of Re-ID models to new camera networks.
-                            Previous methods have attempted to address these issues by using data augmentation, but they rely on poses already present in the dataset, failing to effectively reduce the pose bias in the dataset.
-                            In this paper, we propose <strong>Pose-dIVE</strong>, a novel approach that augments training data with sparse and limited poses that are underrepresented in the original distribution.
-                            By leveraging the knowledge of pre-trained large-scale generative models like Stable Diffusion, we successfully generate realistic images with diverse human poses and camera viewpoints.
-                            Specifically, our objective is to create a training dataset that enables existing Re-ID models to learn features debiased to pose variations.
-                            Qualitative results demonstrate the effectiveness of our method in addressing pose bias and enhancing the generalizability of Re-ID models compared to other approaches.
-                            The performance gains achieved by training Re-ID models on our offline augmented dataset highlight the potential of our proposed framework in improving the scalability and generalizability of person Re-ID models.
+                            Person re-identification (Re-ID) often faces challenges due to variations in human poses and camera viewpoints, which significantly affect the appearance of individuals across images.
+                            Existing datasets frequently lack diversity and scalability in these aspects, hindering the generalization of Re-ID models to new camera systems or environments.
+                            To overcome this, we propose <strong>Pose-dIVE</strong>, a novel data augmentation approach that incorporates sparse and underrepresented human pose and camera viewpoint examples into the training data, addressing the limited diversity in the original training data distribution.
+                            Our objective is to augment the training dataset to enable existing Re-ID models to learn features unbiased by human pose and camera viewpoint variations.
+                            By conditioning the diffusion model on both the human pose and camera viewpoint through the SMPL model, our framework generates augmented training data with diverse human poses and camera viewpoints.
+                            Experimental results demonstrate the effectiveness of our method in addressing human pose bias and enhancing the generalizability of Re-ID models compared to other data augmentation-based Re-ID approaches.
                         </p>
                     </div>
                 </div>
@@ -186,19 +173,16 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    Main Architecture
+                    Pose-dIVE Framework
                 </h3>
                 <div class="text-center">
-                    <img src="./img/architecture.jpg" width="100%">
+                    <img src="./img/framework.png" width="100%">
                 </div>
                 <br>
                 <div class="text-justify">
-                    Given the viewpoint and pose distributions, we first render
-                the body shape sampled from the distribution using SMPL, generating the corresponding skeleton, depth map, and normal
-                maps. These conditions, along with a reference image for identity preservation, are then fed into generative module, which
-                consists of two branches: the reference U-Net processes the identity information from the reference image, while the denoising
-                U-Net generates a person with the same identity, given the input conditions. The denoising U-Net generates images by iterating
-                through the denoising process.
+                    Upon observing the highly biased viewpoint and human pose distributions in the existing training dataset,
+                    we augment the dataset by manipulating SMPL body shapes and feeding the rendered shapes into a generative model to fill in sparsely distributed poses and viewpoints.
+                    With this augmented dataset, we can train a Re-ID model that is robust to viewpoint and human pose biases.
                 </div>
                 <br>
                 <br>
@@ -214,9 +198,6 @@
                     <img src="./img/ablation.png" width="100%">
                 </div>
                 <br>
-                <!-- <div class="text-center">
-                    <img src="./img/dist_vis.png" width="100%">
-                </div> -->
                 <div class="text-justify">
                     <strong>Quantitative validation of Pose-dIVE augmentation strategies.</strong>
                     We conduct an ablation study using CLIP-ReID to verify the effectiveness of our viewpoint and human pose augmentation.
